@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura no Recife Antigo</title>
+    <link rel="stylesheet" href="style.css?v=2">
+<script src="game.js?v=2" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>🐭 Aventura no Recife Antigo</h1>
+            <p>Pegue comida, fuja dos perigos e volte ao bueiro!</p>
+        </header>
+
+        <!-- Tela inicial -->
+        <section id="tela-inicial">
+            <h2>Prepare seu ratinho</h2>
+
+            <form id="form-iniciar">
+                <label for="nome-jogador">Nome do jogador</label>
+                <input
+                    type="text"
+                    id="nome-jogador"
+                    placeholder="Digite seu nome"
+                    maxlength="30"
+                    required
+                >
+
+                <label for="nivel">Dificuldade</label>
+                <select id="nivel">
+                    <option value="facil">🟢 Fácil</option>
+                    <option value="medio">🟡 Médio</option>
+                    <option value="dificil">🔴 Difícil</option>
+                </select>
+
+                <button type="submit">Começar aventura</button>
+            </form>
+
+            <h3>Como jogar</h3>
+            <ul>
+                <li>Use as setas ou WASD para movimentar o rato.</li>
+                <li>Encoste na comida para coletá-la.</li>
+                <li>Volte ao bueiro para entregar a comida.</li>
+                <li>No bueiro, você fica protegido.</li>
+                <li>Fuja do gato e da pessoa com a vassoura!</li>
+                <li>Segure E perto de uma caixa para se esconder por até 3 segundos.</li>
+<li>Depois de sair, espere 6 segundos para se esconder novamente.</li>
+<li>Desvie dos cones: eles bloqueiam sua passagem!</li>
+            </ul>
+        </section>
+
+        <!-- Tela do jogo -->
+        <section id="tela-jogo" hidden>
+            <div id="hud">
+                <span>Jogador: <strong id="hud-jogador"></strong></span>
+                <span>Nível: <strong id="hud-nivel"></strong></span>
+                <span>Vidas: <strong id="hud-vidas">0</strong></span>
+                <span>Pontos: <strong id="hud-pontos">0</strong></span>
+                <span>Tempo: <strong id="hud-tempo">0s</strong></span>
+                <span>Carregando: <strong id="hud-carga">0</strong></span>
+                <span>Entregues: <strong id="hud-entregues">0</strong></span>
+            </div>
+
+            <p id="mensagem-jogo" role="status">
+                Explore a rua e procure comida!
+            </p>
+
+            <canvas
+                id="jogo"
+                width="1000"
+                height="600"
+                aria-label="Jogo do ratinho nas ruas do Recife Antigo"
+            >
+                Seu navegador não oferece suporte ao Canvas.
+            </canvas>
+            <div id="controles-touch">
+    <div class="direcional" aria-label="Controles de movimento">
+        <button
+            type="button"
+            class="controle cima"
+            data-tecla="arrowup"
+            aria-label="Mover para cima"
+        >▲</button>
+
+        <button
+            type="button"
+            class="controle esquerda"
+            data-tecla="arrowleft"
+            aria-label="Mover para a esquerda"
+        >◀</button>
+
+        <button
+            type="button"
+            class="controle baixo"
+            data-tecla="arrowdown"
+            aria-label="Mover para baixo"
+        >▼</button>
+
+        <button
+            type="button"
+            class="controle direita"
+            data-tecla="arrowright"
+            aria-label="Mover para a direita"
+        >▶</button>
+    </div>
+
+    <button
+        type="button"
+        id="btn-esconder"
+        class="controle"
+        data-tecla="e"
+    >📦 Segure para esconder</button>
+</div>
+        </section>
+
+        <!-- Resultado e ranking -->
+        <section id="tela-final" hidden>
+            <h2 id="titulo-resultado"></h2>
+            <p id="resumo-resultado"></p>
+            <p id="status-ranking" role="status"></p>
+
+            <h3>🏆 Os dez melhores deste nível</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Posição</th>
+                        <th scope="col">Jogador</th>
+                        <th scope="col">Pontos</th>
+                        <th scope="col">Tempo</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-corpo"></tbody>
+            </table>
+
+            <button id="btn-reiniciar" type="button">
+                Jogar novamente
+            </button>
+            <button id="btn-menu" type="button">
+                Trocar nível
+            </button>
+        </section>
+    </main>
+</body>
+</html>
