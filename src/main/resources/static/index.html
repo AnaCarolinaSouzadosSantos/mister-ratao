@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aventura no Recife Antigo</title>
-    <link rel="stylesheet" href="style.css?v=2">
-<script src="game.js?v=2" defer></script>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="jogo.js" defer></script>
 </head>
 <body>
     <main>
@@ -14,7 +14,7 @@
             <p>Pegue comida, fuja dos perigos e volte ao bueiro!</p>
         </header>
 
-        <!--- Tela inicial --->
+        <!-- Tela inicial -->
         <section id="tela-inicial">
             <h2>Prepare seu ratinho</h2>
 
@@ -46,8 +46,8 @@
                 <li>No bueiro, você fica protegido.</li>
                 <li>Fuja do gato e da pessoa com a vassoura!</li>
                 <li>Segure E perto de uma caixa para se esconder por até 3 segundos.</li>
-<li>Depois de sair, espere 6 segundos para se esconder novamente.</li>
-<li>Desvie dos cones: eles bloqueiam sua passagem!</li>
+                <li>Depois de sair, espere 6 segundos para se esconder novamente.</li>
+                <li>Desvie dos cones: eles bloqueiam sua passagem!</li>
             </ul>
         </section>
 
@@ -75,44 +75,17 @@
             >
                 Seu navegador não oferece suporte ao Canvas.
             </canvas>
+            
             <div id="controles-touch">
-    <div class="direcional" aria-label="Controles de movimento">
-        <button
-            type="button"
-            class="controle cima"
-            data-tecla="arrowup"
-            aria-label="Mover para cima"
-        >▲</button>
+                <div class="direcional" aria-label="Controles de movimento">
+                    <button type="button" class="controle cima" data-tecla="arrowup" aria-label="Mover para cima">▲</button>
+                    <button type="button" class="controle esquerda" data-tecla="arrowleft" aria-label="Mover para a esquerda">◀</button>
+                    <button type="button" class="controle baixo" data-tecla="arrowdown" aria-label="Mover para baixo">▼</button>
+                    <button type="button" class="controle direita" data-tecla="arrowright" aria-label="Mover para a direita">▶</button>
+                </div>
 
-        <button
-            type="button"
-            class="controle esquerda"
-            data-tecla="arrowleft"
-            aria-label="Mover para a esquerda"
-        >◀</button>
-
-        <button
-            type="button"
-            class="controle baixo"
-            data-tecla="arrowdown"
-            aria-label="Mover para baixo"
-        >▼</button>
-
-        <button
-            type="button"
-            class="controle direita"
-            data-tecla="arrowright"
-            aria-label="Mover para a direita"
-        >▶</button>
-    </div>
-
-    <button
-        type="button"
-        id="btn-esconder"
-        class="controle"
-        data-tecla="e"
-    >📦 Segure para esconder</button>
-</div>
+                <button type="button" id="btn-esconder" class="controle" data-tecla="e">📦 Segure para esconder</button>
+            </div>
         </section>
 
         <!-- Resultado e ranking -->
