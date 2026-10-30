@@ -304,6 +304,36 @@ button:active {
     grid-row: 2;
 }
 
+/* Otimização da tela para celulares */
+@media (max-width: 600px) {
+
+    header {
+        margin-bottom: 8px;
+    }
+
+    header h1 {
+        display: none;
+    }
+
+    header p {
+        margin: 4px 0 10px;
+        font-size: 13px;
+    }
+
+    body {
+        padding: 8px 5px;
+    }
+
+    section {
+        padding: 10px 8px;
+    }
+
+    #tela-jogo {
+        padding: 8px;
+    }
+}
+
+
 .baixo {
     grid-column: 2;
     grid-row: 2;
